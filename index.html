@@ -3,39 +3,32 @@
 <head>
 	<title></title>
 	<script>
-		var x;
-		function xminus(){
-			x = prompt("Введите значение x меньше 1",-1);
-			if (x>-1){
-				xminus();
-			}
-		}
-		xminus();
-		var k=1;
-		var l = 0;
-		var test = "";
-		function sqr(){
-			l=x;
-			for (i1=1;i1<k;i1++){
-					l*=x;
-				}
-		}
-		var res=0;
-		var iter = prompt("Введите количество итераций");
-		for (i=0;i<iter;i++){
-			sqr()
+		function main(){
+			var x=document.getElementById('x').value;
+			var k=1;
+			var res=0;
+			var iter = document.getElementById('iter').value;
+			for (i=0;i<iter;i++){
 			if(i%2==0){
-				res-=1/(k*l)
+				res-=1/(k*Math.pow(x,k))
 			}
 			else{
-				res+=1/(k*l)
+				res+=1/(k*Math.pow(x,k))
 			}
 			k+=2;
 		}
 		res-=(3.14/2);
-		alert(res);
+		document.writeln("Ответ: " + res);
+		}
 	</script>
 </head>
+<form onsubmit="main()">
+	<p>Введите значение x меньше 1</p>
+	<p><input type ="text" id="x" value="-1"></p>
+	<p>Введите количество итераций</p>
+	<p><input type="text" id="iter" value="5"></p>
+	<p><input type="submit"></p>
+</form>
 <body>
 
 </body>
