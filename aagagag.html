@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+		var n;
+		document.write('<form onsubmit="main()"><p>Введите n</p><p><input type ="text" id="n" value="-1"></p><input type="submit"></form>')
+		function main(){
+			n=document.getElementById('n').value;
+			document.write('<form onsubmit="arry()">')
+			for(i=0;i<n;i++){
+				document.write('<p>Введите ' + i + ' элемент массива<p><input type="text" id="val'+i+'">');
+			}
+			document.write('<p><input type="submit"></p></form>')
+		}
+		function arry(){
+			document.write("фпфп");
+			var values=[]
+			for(i=0;i<n;i++){
+				values[i]=document.getElementById("val"+i).value;
+			}
+			document.write("фпфпф");
+			console.log(values);
+		}
+	</script>
+</head>
+<body>
+</body>
+</html>
